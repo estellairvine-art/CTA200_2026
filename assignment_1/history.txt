@@ -1,0 +1,264 @@
+    1  dc..
+    2  ls
+    3  cd..
+    4  cd ..
+    5  ls
+    6  mkdir
+    7  makdir test
+    8  mkdir test
+    9  cd 
+   10  cd /mnt/scratch/eirvine
+   11  cd /mnt/scratch-lustre/eirvine
+   12  cd ..
+   13  ls
+   14  pwd
+   15  git clone https: //github.com/CITA/CTA200H.git
+   16  pwd
+   17  cd /mnt/scratch-lustre/eirvine
+   18  git clone https: //github.com/CITA/CTA200H.git
+   19  pwd
+   20  cd ~
+   21  pwd
+   22  git clone https: //github.com/CITA/CTA200H.git
+   23  git clone https://github.com/CITA/CTA200H.git
+   24  ls
+   25  cd CTA200H
+   26  git remote set-url origin https://github.com/estellairvine-art/CTA200H
+   27  mkdir CTA200 2026
+   28  cd CTA200 2026
+   29  makdir CTA200_2026
+   30  mkdir CTA200_2026
+   31  cd CTA200_2026
+   32  mkdir assignment_1
+   33  touch README.md
+   34  vi README.md # CTA200 2026
+   35  vim README.md 
+   36  nano README.md
+   37  vim README.md 
+   38  cd assignment_1
+   39  touch README.md
+   40  vim README.md
+   41  find Hello_world.c
+   42  find Hello_world.py
+   43  cd mkdir CTA200_2026
+   44  cd CTA200_2026
+   45  ssh cosmo3.cita.utoronto.ca
+   46  ssh eirvine@cosmo6.cita.utoronto.ca
+   47  ssh eirvine@cosmo6.cita.utoronto.ca
+   48  mkdir CTA200_2026
+   49  cd CTA200_2026
+   50  mkdir assignment_1
+   51  cd assignment_1
+   52  touch README.md
+   53  vim README
+   54  cd ..
+   55  git init
+   56  git add . 
+   57  git status
+   58  git commit
+   59  git commit -m "Initial commit"
+   60  git branch -M main
+   61  git remote add origin https://github.com/estellairvine-art/CTA200_2026.git
+   62  git push -u origin main
+   63  modual load python/3.10.2
+   64  module load python/3.10.2
+   65  exit
+   66  ssh eirvine@cosmo6.cita.utoronto.ca
+   67  exit
+   68  ssh eirvine@cosmo3.cita.utoronto.ca
+   69  ssh eirvine@cosmo6.cita.utoronto.ca
+   70  cd CTA200_2026
+   71  git inti
+   72  git init
+   73  git add .
+   74  git status
+   75  ls
+   76  git reset assignment_1/README
+   77  git status
+   78  git add .
+   79  git status
+   80  ls
+   81  git log
+   82  ssh -L 3745
+   83  ssh -L 2567
+   84  ssh -L 2567:localhost:2567 eirvine@gw.cita.utoronto.ca
+   85  exit
+   86  module load python/3.10.2
+   87  jupyter notebook --port=2576 --no-browser
+   88  pwd
+   89  cd CTA200_2026
+   90  mkdir assignment_2
+   91  cd assignment_2
+   92  jupyter notebook
+   93  ssh -L 8888:localhost:8888 eirvine@gw.cita.utoronto.ca
+   94  exit
+   95  ssh -L 2576:localhost:2576 cosmo6
+   96  exit
+   97  ssh -L 2576:localhost:2576 cosmo6
+   98  module load python/3.10.2
+   99  jupyter notebook --port=2576 --no-browser
+  100  pwd
+  101  cd ~/.ssh
+  102  ls
+  103  ssh-keygen -t rsa -b 2048 -C "github key"
+  104  pwd
+  105  cd config
+  106  ls
+  107  jupyter notebook --port=2576 --no-browser
+  108  ls
+  109  cat id_rsa.pub
+  110  ls
+  111  cd ~
+  112  pwd
+  113  ls
+  114  cd CTA200_2026
+  115  ls
+  116  git remote set-url origin https://github.com/estellairvine-art/CTA200_2026
+  117  git status
+  118  git add -A
+  119  ls
+  120  git status
+  121  ls assignment_1
+  122  cd assignment_1
+  123  git status
+  124  git pull
+  125  cd ..
+  126  git pull
+  127  cd ..
+  128  ls
+  129  rm -rf CTA200_2026
+  130  ls
+  131  git clone https://github.com/estellairvine-art/CTA200_2026
+  132  ls
+  133  cd CTA200_2026/
+  134  git remote set-url origin https://github.com/estellairvine-art/CTA200_2026
+  135  git status
+  136  mkdir assignment_1
+  137  git status
+  138  ls
+  139  git add -A
+  140  git status
+  141  git commit -m "created assignment 1 folder"
+  142  git push
+  143  git pull
+  144  ls
+  145  cd assignment_1
+  146  git status
+  147  cd ..
+  148  git add -A
+  149  git status
+  150  jupyter notebook --port=2576 --no-browser
+  151  pws
+  152  pwd
+  153  cd ..
+  154  jupyter notebook --port=2576 --no-browser
+  155  pwd
+  156  cd CTA200_2026
+  157  cd assignment_1
+  158  vim README.md
+  159  pwd
+  160  cat README.md
+  161  ls
+  162  cd ..
+  163  ls
+  164  git status
+  165  git add -A
+  166  git status
+  167  git commit -m "created README for a1"
+  168  git push 
+  169  git push
+  170  git login
+  171  git --help
+  172  git branch
+  173  git push
+  174  git remote -v
+  175  git remote set-url origin git@github.com:estellairvine-art/CTA200_2026.git
+  176  ssh -T git@github.com
+  177  cd ~
+  178  ls -a
+  179  cd .ssh
+  180  ls -a
+  181  vim id_rsa.pub
+  182  cat cluster.pub
+  183  eval "$(ssh-agent -s)"
+  184  ssh-add ~/.ssh/id_rsa
+  185  cat id_rsa.pub
+  186  ssh -T git@github.com
+  187  git push
+  188  cd ~
+  189  cd CTA200_2026
+  190  git push
+  191  module load python/3.10.2
+  192  jupyter notebook --port=2576 --no-browser
+  193  cd ~/CTA200_2026/assignment_2
+  194  jupyter notebook --port=2576 --no-browser
+  195  exit
+  196  ssh -L 2576:localhost:2576 cosmo6
+  197  exit
+  198  module load python/3.10.2
+  199  cd ~/CTA200_2026/assignment_2
+  200  jupyter notebook --port=8899 --no-browser
+  201  pwd
+  202  jupyter notebook --port=8394 --no-browser
+  203   module load python/3.10.2
+  204  cd ~/CTA200_2026/assignment_2
+  205  jupyter notebook --port=8899 --no-browser
+  206  jupyter notebook --port=8394 --no-browser
+  207  pwd
+  208  git status
+  209  git add -A
+  210  git commit -m "Save assignment 2 all code finished"
+  211  git push origin main
+  212  git remote -v
+  213  ls ~/.ssh
+  214  cat ~/.ssh/id_ed25519.pub
+  215  cat ~/.ssh/id_rsa.pub
+  216  ssh -vT git@github.com
+  217  ls ~/.ssh
+  218  nano ~/.ssh/config
+  219  ssh -T git@github.com
+  220  git push origin main
+  221  module load python/3.10.2
+  222  jupyter notebook --port=2576 --no-browser
+  223  pwd
+  224  exit
+  225  ssh -L 2576:localhost:2576 cosmo6
+  226  exit
+  227  pwd
+  228  cd CTA200_2026
+  229  cd assignment_1
+  230  find /home/murray/ -name "Hello_world.*" 2>/dev/null
+  231  cp /home/murray/tmp/Hello_world.py .
+  232  cp /home/murray/Papers/tmp/Hello_world.c .
+  233  ls
+  234  mv Hello_world.c Hello_world_irvine.c
+  235  mv Hello_world_irvine.py
+  236  mv Hello_world.py Hello_world_irvine.py
+  237  ls
+  238  module load gcc
+  239  gcc Hello_world.c -o Hello_world.x
+  240  gcc Hello_world_irvine.c -o Hello_world.x
+  241  ./Hello_world.x
+  242  ls
+  243  python3 Hello_world_irvine.py
+  244  vi Hello_world_irvine.py
+  245  vi Hello_world_irvine.c
+  246  ./Hello_world.c
+  247  ./Hello_world_irvine.c
+  248  python3 Hello_world_irvine.py
+  249  ./Hello_world.x
+  250  cat Hello_world_irvine.c
+  251  ./Hello_world.x > output_c.txt
+  252  python3 Hello_world_irvine.py > output_python.txt
+  253  cat output_c.txt
+  254  cat output_python.txt
+  255  ./Hello_world_irvine.c > output_c.txt
+  256  vi Hello_world_irvine.c
+  257  ./Hello_world_irvine.c > output_c.txt
+  258  gcc Hello_world_irvine.c -o Hello_world.x
+  259  ./Hello_world.x > output_c.txt
+  260  ./Hello_world.x
+  261  cat output_python.txt
+  262  cat outpt_c.txt
+  263  cat output_c.txt
+  264  history > history.txt
