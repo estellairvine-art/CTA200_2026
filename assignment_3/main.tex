@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+\usepackage{graphicx} % Required for inserting images
+
+\title{CTA200 2025 Assignment 3}
+\author[1]{DUE: Tuesday May 13th by 1:00 PM}
+%\author[2]{Estella Irvine}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Question One}
+
+Question one of the assignment asked for each point in the complex plane, defined by
+\begin{equation}
+    c=x+iy    
+\label{eq1}
+\end{equation}
+between $-2<x<2$ and $-2<y<2$ to be plotted based on the values of the function 
+\begin{equation}
+    z_{i+1}=z_i^2+c
+\label{eq2}
+\end{equation}
+that are either bounded in absolute value 
+\begin{equation}
+    |z|^2=\Re(z)^2 + \Im(z)^2  
+\label{eq3}
+\end{equation}
+ or diverge to infinity.  
+
+\subsection{Methods}
+
+To create a plot the function defined by \autoref{eq2} needs to be iterated through for every value of $c$ in the $-2<x<2$ and $-2<y<2$ range.  By creating a grid from $-2<x<2$ and $-2<y<2$ with $500$ points between the maximum and minimum values, the $x$ and $y$ coordinates at each point in this grid are plugged into \autoref{eq1} to determine all the possible values of $c$. \\
+A function was defined that starts at $z_0=0$ and iterates through \autoref{eq2} $150$ times. This function calculates $z_{i+1}$ and then checks if $|z_{i+1}| > 2$. For large $z_{i+1}$, $z_{i+1}\approx z_i^2$ which means for squaring numbers larger than $2$ the function begins to diverge, therefore if $|z_{i+1}| > 2$ the function increases to infinity. If the result increases to infinity the function returns the number of iterations it took to diverge, and if the result remains in the bound for all iterations the function returns the max iteration value. This function takes in each value of $c$ in the gird and returns either the number of iterations it took for the function to escape the bound or the maximum iteration value. The coordinate at which $c$ is calculated is then assigned to the number of iterations the function returns. \\
+For the plot with only two colours, assigned based on weather or not the equation diverged or stayed bounded, if the value the function returns is equal to the maximin iteration it is assigned the value one and if the value the function returns is less then the maximum iteration it is assigned the value zero. This creates a gird where each point either has the value one or zero and they are assigned a different colour to create a plot. For the colourscale plot rather than assigning a colour based on if it escaped the bound or not, a colour map is used to assign the different values the functions returns from a range of $0$ to $150$. 
+
+\subsection{Results}
+
+Using the grid values assigned by the results of the function converted to zeros or ones and the results of the function assigned to a colour based on a colour map following plot was produced.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Screenshot 2026-05-12 at 11.01.42 AM}
+    \caption{Left: Plot of \autoref{eq2} where values returned are assigned a colour based on value. Right: plot of \autoref{eq2} where white is values that reaches the maximum iterations and did not escape and black are the values that diverged before reach the maximum iterations.}
+    \label{Q1}
+\end{figure}
+
+These plots shows the points on the grid where \autoref{eq2} has a value of $c$ that causes the equation to reach the maximum iteration value are in yellow (left) and white (right) and the points that diverged before the maximum iteration are in blue and orange (left) and black (right).
+
+
+\section{Question Two}
+Question two of the assignment uses three of Lorenz's equations:
+
+\begin{equation}
+    \dot{X} = -\sigma(X-Y)  
+\label{eq4}
+\end{equation}
+
+\begin{equation}
+    \dot{Y} = rX-Y-XZ  
+\label{eq5}
+\end{equation}
+
+\begin{equation}
+    \dot{Z} = -bZ+XY  
+\label{eq6}
+\end{equation}
+
+The question asks to use an ODE solver to integrate these equations for $t=60$ (dimensionless time units) and to use the solution to reproduce Lorenz' figure $1$ and $2$. Then solve the equation with initial conditions very slightly different than $W_0$, say $W'_0 = W_0+[0., 1.e-8, 0] = [0., 1.00000001, 0.]$ and plot the distance between $W$ and $W'$ versus time. 
+
+\subsection{Methods}
+
+To solve the equations they were all defined in their own functions and then used in a final function that has a parameter for the $X, Y$ and $Z$ variables and a parameter for time which allows the function to compute the three equations over time. Additionally, the span was defined as the total time from $0-60$ and the points were defined with $3000$ points over the span to satisfy $1000$ points for each third of the span. Solve\_ivp was used with the initial conditions for $X, Y$ and $Z$ for the variable parameter, the span for the time parameter, and t\_eval was set as the points. Computing this give the solution to all three equations. To reproduce Lorenz' figure $1$ the span was index into three separate arrays each of length $1000$. This was then plotted against the solution to \autoref{eq5} by indexing the solution of the function containing all three equations. This produced three plots from $0-1000, 1000-2000$ and $2000-3000$ ($N=t/\Delta t$ where $\Delta t=0.01$) versus $Y$. \\
+To reproduce Lorenz' figure 2 the solution of the function containing all three equations was indexed to obtain the $X, Y$ and $Z$ solutions. The $Z$ and $Y$ solutions were plotted against each other and the $Y$ and $X$ solutions were plotted against each other. \\
+The function was then evaluated again using $X, Y, Z$ set to $1.0\times 10 ^{-8}, 1.00000001, 1.0\times 10 ^{-8}$, respectively. The new solution was then subtracted from the previous solution to obtain the distance between the two. This result was then plotted against the time span.   
+
+\subsection{Results}
+
+Using the solution to \autoref{eq5} and the time divided by $0.01$ the following plot was produced where the span is separated into three sections. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2026-05-12 at 11.04.35 AM.png}
+    \caption{Top: The first $20$ time units versus the solution to \autoref{eq5}. Middle: Time units from $20-40$ versus the solution to \autoref{eq5}. Bottom: Time units from $40-60$ versus the solution to \autoref{eq5}. The y-axis is the input value proportional to the temperature difference of ascending and descending currents and the x-axis is the time units where $\Delta t =0.001$.}
+    \label{L1}
+\end{figure}
+
+
+Using the solution to the three Lorenz' equations the following plot show the solutions plotted against each other. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Screenshot 2026-05-12 at 11.06.05 AM.png}
+    \caption{Left: Plot of the solution to \autoref{eq5} versus the solution to \autoref{eq6}. Where the x-axis is a value proportional to the temperature difference of ascending and descending currents and the y-axis is a value proportional to the distortion of the vertical temperature profile from linearity.. Right: Plot of the solution to \autoref{eq4} versus the solution to \autoref{eq5}. Where the x-axis is a value proportional to the intensity of the convective motion and the y-axis is a value proportional to the temperature difference of ascending and descending currents.}
+    \label{L2}
+\end{figure}
+
+By finding the distance between the two solutions calculated from different values of $X, Y$ and $Z$ and plotted against the span the following plot was produced. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Screenshot 2026-05-12 at 11.10.56 AM.png}
+    \caption{Plot of the distance between two different solutions to the three Lorenz equations, were the x-axis is the unitless time and the y-axis is the unitless distance.}
+    \label{dsit}
+\end{figure}
+
+\end{document}
+
